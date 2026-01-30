@@ -1,0 +1,228 @@
+{
+  "hero": {
+    "role": "Front-End Developer",
+    "name": "Wei Hsuan Lee",
+    "locationLine": "Luxembourg - From Taipei",
+    "headline": "Front-end developer with 4+ years of experience building scalable web apps.",
+    "summary": "Specialized in React, TypeScript, and modern frameworks. Based in Luxembourg.",
+    "workAuthorization": {
+      "label": "Work Authorization",
+      "details": "Luxembourg Working Holiday Visa (Jun 2025 - Jun 2026). Full-time work without sponsorship, with extension possible via employer support."
+    },
+    "contact": {
+      "label": "Contact",
+      "phone": "+352 661 889 885",
+      "email": "weihsuan006@gmail.com"
+    },
+    "links": [
+      {
+        "label": "LinkedIn",
+        "href": "https://linkedin.com/in/wei-hsuan-lee",
+        "icon": "/icon-linkedin.svg",
+        "variant": "glass"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/weihsuanlee",
+        "icon": "/icon-github.svg",
+        "variant": "glass"
+      },
+      {
+        "label": "Download CV",
+        "href": "/WeiHsuanLee_CV.pdf",
+        "variant": "accent"
+      }
+    ]
+  },
+  "focus": {
+    "title": "Focus",
+    "headline": "Frontend Development",
+    "summary": "I craft reliable interfaces that scale across teams while keeping the experience crisp and fast.",
+    "hometownLabel": "Hometown",
+    "hometownSummary": "The background imagery is Taipei - the city where I was born and raised.",
+    "image": {
+      "src": "/profile.png",
+      "alt": "Portrait of Wei Hsuan Lee"
+    }
+  },
+  "skills": [
+    {
+      "title": "Core Stack",
+      "items": [
+        { "name": "React", "icon": "/skills-react.svg" },
+        { "name": "TypeScript", "icon": "/skills-typescript.svg" },
+        { "name": "JavaScript", "icon": "/skills-javascript.svg" },
+        { "name": "Next.js", "icon": "/skills-nextjs.svg" }
+      ]
+    },
+    {
+      "title": "UI & Testing",
+      "items": [
+        { "name": "Redux", "icon": "/skills-redux.svg" },
+        { "name": "Jest", "icon": "/skills-jest.svg" },
+        { "name": "Material UI", "icon": "/skills-mui.svg" },
+        { "name": "Storybook", "icon": "/skills-storybook.svg" }
+      ]
+    },
+    {
+      "title": "Backend & Data",
+      "items": [
+        { "name": "Python", "icon": "/skills-python.svg" },
+        { "name": "Node.js", "icon": "/skills-node.svg" },
+        { "name": "Express", "icon": "/skills-express.svg" },
+        { "name": "MySQL", "icon": "/skills-mysql.svg" }
+      ]
+    },
+    {
+      "title": "Platforms",
+      "items": [
+        { "name": "Git", "icon": "/skills-git.svg" },
+        { "name": "AWS", "icon": "/skills-aws.svg" },
+        { "name": "GitHub Actions", "icon": "/skills-github-actions.svg" }
+      ]
+    },
+    {
+      "title": "Product Toolkit",
+      "items": [
+        { "name": "Figma", "icon": "/skills-figma.svg" },
+        { "name": "Google Analytics 4", "icon": "/skills-ga4.svg" },
+        { "name": "MJML", "icon": "/skills-mjml.png" }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "IT Help Desk (CDD)",
+      "company": "Bank of China",
+      "companyIcon": { "src": "/bank-of-china.png", "alt": "Bank of China logo" },
+      "location": "Luxembourg",
+      "date": "Jul 2025 - Jan 2026",
+      "points": [
+        "Supported hardware and software setup, including Windows upgrade projects (Win7 -> Win11).",
+        "Troubleshot system and user technical issues to keep daily IT operations stable."
+      ]
+    },
+    {
+      "title": "Front-End Developer",
+      "company": "ACCUPASS",
+      "companyIcon": { "src": "/accupass.png", "alt": "ACCUPASS logo" },
+      "location": "Taipei, Taiwan",
+      "date": "Apr 2021 - Jun 2025",
+      "points": [
+        "Developed and maintained React/Redux UIs for Taiwan's leading event platform serving 3.2M+ members and 60M+ monthly page views.",
+        "Built a cross-project UI library with Storybook and TypeScript.",
+        "Delivered a new C-end website using Next.js App Router with SSR, including cross-site routing and legacy React integration.",
+        "Built ad editor and analytics dashboards with Chart.js for campaign performance tracking.",
+        "Integrated WebView support for native apps with deep linking and postMessage communication.",
+        "Supported i18n and GA4 analytics, and created MJML email templates for marketing."
+      ]
+    },
+    {
+      "title": "Front-End Web Development Student",
+      "company": "Institute for Information Industry",
+      "companyIcon": { "src": "/iii.png", "alt": "Institute for Information Industry logo" },
+      "location": "Taipei, Taiwan",
+      "date": "Oct 2020 - Mar 2021",
+      "points": [
+        "Completed a 582-hour program covering HTML5, CSS3, and JavaScript fundamentals.",
+        "Led a team to build a full-stack e-commerce site using React, Node.js (Express), MySQL, Bootstrap, and jQuery."
+      ]
+    },
+    {
+      "title": "Digital Marketing Specialist",
+      "company": "AimHit Communications",
+      "companyIcon": { "src": "/aimhit.png", "alt": "AimHit Communications logo" },
+      "location": "Taipei, Taiwan",
+      "date": "Apr 2020 - Jun 2020",
+      "points": []
+    },
+    {
+      "title": "Management Trainee",
+      "company": "Wuhan DDMC Culture & Sports Co., Ltd.",
+      "companyIcon": { "src": "/ddmc.png", "alt": "Wuhan DDMC Culture & Sports logo" },
+      "location": "Beijing, China",
+      "date": "Sep 2018 - Sep 2019",
+      "points": []
+    },
+    {
+      "title": "Retail Sales Associate",
+      "company": "Atlanta Hawks",
+      "companyIcon": { "src": "/atlanta-hawks.png", "alt": "Atlanta Hawks logo" },
+      "location": "Atlanta, United States",
+      "date": "Oct 2017 - May 2018",
+      "points": []
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI Sponsor Finder",
+      "link": "https://github.com/weihsuanlee/v0-ai-sponsor-finder",
+      "demo": "https://v0-ai-sponsor-finder.vercel.app/",
+      "video": "https://www.youtube.com/watch?v=yNsAwi7xMCU",
+      "image": "/ai-sponsor-finder.png",
+      "summary": "AI-driven platform that matches sports clubs with sponsors and generates tailored pitch materials.",
+      "points": [
+        "Built responsive UI with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui with multi-language support (EN/FR/DE).",
+        "Designed guided onboarding with CSV/Excel upload, demographic parsing, and live data visualization using Recharts.",
+        "Implemented Google Gemini workflows via Vercel AI SDK with structured outputs and explainable reasoning.",
+        "Created a Kanban-style outreach pipeline with drag-and-drop tracking."
+      ]
+    },
+    {
+      "title": "Formrrito",
+      "link": "https://github.com/capyba-ramen/formrrito-frontend",
+      "image": "/formrrito.png",
+      "summary": "AI-assisted form builder with analytics, automation, and export tooling.",
+      "points": [
+        "Architected the frontend with React, TypeScript, Material UI, and SWR data fetching.",
+        "Integrated OpenAI API for intelligent question generation and form optimization.",
+        "Built real-time analytics dashboards with Chart.js and Excel export workflows.",
+        "Deployed on AWS EC2 with GitHub Actions CI/CD and Nginx."
+      ]
+    },
+    {
+      "title": "Calm Decisions",
+      "link": "https://github.com/weihsuanlee/calm-decisions",
+      "demo": "https://v0-eisenhower-matrix-app-khaki.vercel.app/",
+      "image": "/calm-decisions.png",
+      "summary": "Minimal decision-making tool with a distraction-free workflow to reduce cognitive load and support calmer daily planning.",
+      "points": [
+        "Created a lightweight task board inspired by IT help desk workflows.",
+        "Focused on minimal UI and reduced cognitive load for daily use.",
+        "Integrated subtle AI assistance to enhance reflection without cluttering the interface."
+      ]
+    },
+    {
+      "title": "Threads Autoposter (n8n)",
+      "demo": "https://www.threads.com/@frontend.jpg",
+      "image": "/threads-automation.png",
+      "summary": "Automated daily Threads posting with n8n: fetches news, drafts three posts, and lets me select or auto-publish a random option with one-click regeneration.",
+      "points": [
+        "Built a news ingestion flow that summarizes sources into concise Threads-ready copy.",
+        "Created a three-post review step with manual selection or random auto-publish fallback.",
+        "Added on-demand regeneration to iterate quickly without rebuilding the workflow."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "University of South Carolina",
+      "degree": "Master in Sport & Entertainment Management (2015 - 2017, GPA 3.96)",
+      "icon": { "src": "/school-usc.png", "alt": "University of South Carolina logo" }
+    },
+    {
+      "school": "National Taiwan University",
+      "degree": "Bachelors of Economics (2010 - 2014)",
+      "icon": { "src": "/school-ntu.png", "alt": "National Taiwan University logo" }
+    }
+  ],
+  "honors": [
+    "Excellent Chinese Composition Example (1 of 10 out of 142,129 examinees on GSAT)",
+    "Atlanta Hawks Employee of the Year (Season 2017 - 2018)"
+  ],
+  "languages": [
+    "Mandarin (Native)",
+    "English (Fluent, TOEFL 103/120)",
+    "French (Beginner A1-3)"
+  ]
+}
