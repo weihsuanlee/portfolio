@@ -140,7 +140,7 @@ main {
 .scooter-ride {
   position: fixed;
   top: 125px;
-  left: 90%;
+  left: 75%;
   width: 72px;
   height: 72px;
   z-index: 30;
