@@ -1,15 +1,16 @@
-import Image from 'next/image'
+import Image from "next/image";
 
-import ThemeToggle from '@/components/ThemeToggle'
-import cv from '@/data/cv.json'
+import ScooterRide from "@/components/ScooterRide";
+import ThemeToggle from "@/components/ThemeToggle";
+import cv from "@/data/cv.json";
 
-type ActionVariant = 'glass' | 'accent'
+type ActionVariant = "glass" | "accent";
 
 const IconBadge = ({ src, alt }: { src: string; alt: string }) => (
   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[color:var(--surface-border)] bg-white/70 p-0.5 shadow-sm">
     <Image src={src} alt={alt} width={40} height={40} className="h-full w-full rounded-full object-cover" />
   </span>
-)
+);
 
 const SkillIcon = ({ src, alt }: { src: string; alt: string }) => (
   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[color:var(--surface-border)] bg-white/70 p-0.5">
@@ -17,35 +18,39 @@ const SkillIcon = ({ src, alt }: { src: string; alt: string }) => (
       <Image src={src} alt={alt} width={18} height={18} className="object-contain" />
     </span>
   </span>
-)
+);
 
 const ActionLink = ({
   href,
   label,
   icon,
-  variant = 'glass',
+  variant = "glass",
 }: {
-  href: string
-  label: string
-  icon?: string
-  variant?: ActionVariant
+  href: string;
+  label: string;
+  icon?: string;
+  variant?: ActionVariant;
 }) => (
   <a
     className={`inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] ${
-      variant === 'accent' ? 'bg-[color:var(--accent)] text-slate-900' : 'glass'
+      variant === "accent" ? "bg-[color:var(--accent)] text-slate-900" : "glass"
     }`}
     href={href}
-    target={href.startsWith('http') ? '_blank' : undefined}
-    rel={href.startsWith('http') ? 'noreferrer' : undefined}
+    target={href.startsWith("http") ? "_blank" : undefined}
+    rel={href.startsWith("http") ? "noreferrer" : undefined}
   >
     {icon && <Image src={icon} alt="" width={14} height={14} className="action-icon object-contain" />}
     <span>{label}</span>
   </a>
-)
+);
 
 export default function Home() {
   return (
-    <main className="px-6 pb-20 pt-10 sm:px-10 lg:px-20">
+    <main className="px-3 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-10 lg:px-20 lg:pb-20">
+      <ScooterRide className="scooter-ride--desktop" />
+      <svg id="scooter-path-svg" className="scooter-path" aria-hidden>
+        <path id="scooter-path" fill="none" stroke="transparent" strokeWidth="2" visibility="hidden" />
+      </svg>
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
         <header className="flex flex-wrap items-center justify-between gap-6">
           <div className="flex flex-col gap-2">
@@ -56,17 +61,20 @@ export default function Home() {
           <ThemeToggle />
         </header>
 
-        <section className="grid gap-8 lg:grid-cols-2">
-          <div className="glass-strong rounded-3xl p-8 sm:p-10">
+        <section id="focus" className="focus-section scooter-section grid gap-6 lg:grid-cols-2">
+          <ScooterRide className="scooter-ride--mobile" animate={false} />
+          <div className="glass-strong rounded-3xl p-5 sm:p-8 lg:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Profile</p>
             <h2 className="heading mt-4 text-4xl font-semibold sm:text-5xl">{cv.hero.headline}</h2>
             <p className="mt-4 text-lg text-muted">{cv.hero.summary}</p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-[color:var(--surface-border)] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">{cv.hero.workAuthorization.label}</p>
+            <div className="mt-6 flex gap-4 flex-wrap">
+              <div className="flex-1 rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
+                  {cv.hero.workAuthorization.label}
+                </p>
                 <p className="mt-2 text-sm text-muted">{cv.hero.workAuthorization.details}</p>
               </div>
-              <div className="rounded-2xl border border-[color:var(--surface-border)] p-5">
+              <div className="flex-1 rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">{cv.hero.contact.label}</p>
                 <p className="mt-2 text-sm font-semibold">{cv.hero.contact.phone}</p>
                 <p className="text-sm font-semibold">{cv.hero.contact.email}</p>
@@ -79,16 +87,23 @@ export default function Home() {
                   href={link.href}
                   label={link.label}
                   icon={link.icon}
-                  variant={(link.variant as ActionVariant) || 'glass'}
+                  variant={(link.variant as ActionVariant) || "glass"}
                 />
               ))}
             </div>
           </div>
 
-          <div className="glass rounded-3xl p-8 sm:p-10">
+          <div className="glass rounded-3xl p-5 sm:p-8 lg:p-10">
             <div className="flex items-start gap-6">
               <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-[color:var(--surface-border)]">
-                <Image src={cv.focus.image.src} alt={cv.focus.image.alt} fill className="object-cover" sizes="112px" priority />
+                <Image
+                  src={cv.focus.image.src}
+                  alt={cv.focus.image.alt}
+                  fill
+                  className="object-cover"
+                  sizes="112px"
+                  priority
+                />
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">{cv.focus.title}</p>
@@ -96,14 +111,14 @@ export default function Home() {
                 <p className="mt-3 text-sm text-muted">{cv.focus.summary}</p>
               </div>
             </div>
-            <div className="mt-6 rounded-2xl border border-[color:var(--surface-border)] p-5">
+            <div className="mt-6 rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">{cv.focus.hometownLabel}</p>
               <p className="mt-2 text-sm text-muted">{cv.focus.hometownSummary}</p>
             </div>
           </div>
         </section>
 
-        <section className="glass rounded-3xl p-8 sm:p-10">
+        <section id="skills" className="scooter-section glass rounded-3xl p-5 sm:p-8 lg:p-10">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Skills</p>
@@ -112,7 +127,7 @@ export default function Home() {
           </div>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {cv.skills.map((group) => (
-              <div key={group.title} className="rounded-2xl border border-[color:var(--surface-border)] p-5">
+              <div key={group.title} className="rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">{group.title}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {group.items.map((item) => (
@@ -130,7 +145,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="glass rounded-3xl p-8 sm:p-10">
+        <section id="experience" className="scooter-section glass rounded-3xl p-5 sm:p-8 lg:p-10">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Experience</p>
@@ -141,7 +156,10 @@ export default function Home() {
 
           <div className="mt-8 space-y-6">
             {cv.experience.map((role) => (
-              <div key={`${role.company}-${role.title}`} className="rounded-2xl border border-[color:var(--surface-border)] p-6">
+              <div
+                key={`${role.company}-${role.title}`}
+                className="rounded-2xl border border-[color:var(--surface-border)] p-4 sm:p-6"
+              >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="flex items-center gap-4">
                     <IconBadge src={role.companyIcon.src} alt={role.companyIcon.alt} />
@@ -169,9 +187,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
-          {cv.projects.map((project) => (
-            <div key={project.title} className="glass rounded-3xl p-8 sm:p-10">
+        <section id="projects" className="scooter-section grid gap-6 lg:grid-cols-2">
+          {cv.projects.map((project, index) => (
+            <div
+              key={project.title}
+              data-project={project.title}
+              data-project-index={index}
+              className="glass rounded-3xl p-5 sm:p-8 lg:p-10"
+            >
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Project</p>
@@ -186,7 +209,13 @@ export default function Home() {
                       rel="noreferrer"
                       aria-label="View GitHub repo"
                     >
-                      <Image src="/icon-github.svg" alt="" width={14} height={14} className="action-icon object-contain" />
+                      <Image
+                        src="/icon-github.svg"
+                        alt=""
+                        width={14}
+                        height={14}
+                        className="action-icon object-contain"
+                      />
                       Repo
                     </a>
                   )}
@@ -198,7 +227,13 @@ export default function Home() {
                       rel="noreferrer"
                       aria-label="Open live demo"
                     >
-                      <Image src="/icon-link.svg" alt="" width={14} height={14} className="action-icon object-contain" />
+                      <Image
+                        src="/icon-link.svg"
+                        alt=""
+                        width={14}
+                        height={14}
+                        className="action-icon object-contain"
+                      />
                       Demo
                     </a>
                   )}
@@ -210,7 +245,13 @@ export default function Home() {
                       rel="noreferrer"
                       aria-label="Watch video demo"
                     >
-                      <Image src="/icon-video.svg" alt="" width={14} height={14} className="action-icon object-contain" />
+                      <Image
+                        src="/icon-video.svg"
+                        alt=""
+                        width={14}
+                        height={14}
+                        className="action-icon object-contain"
+                      />
                       Video
                     </a>
                   )}
@@ -241,12 +282,15 @@ export default function Home() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-2">
-          <div className="glass rounded-3xl p-8 sm:p-10">
+          <div className="glass rounded-3xl p-5 sm:p-8 lg:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Education</p>
             <h2 className="heading mt-3 text-3xl font-semibold">Academic Background</h2>
             <div className="mt-6 space-y-4 text-sm text-muted">
               {cv.education.map((item) => (
-                <div key={item.school} className="flex items-center gap-4 rounded-2xl border border-[color:var(--surface-border)] p-5">
+                <div
+                  key={item.school}
+                  className="flex items-center gap-4 rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5"
+                >
                   <IconBadge src={item.icon.src} alt={item.icon.alt} />
                   <div>
                     <p className="font-semibold text-[color:var(--text-primary)]">{item.school}</p>
@@ -257,7 +301,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="glass-strong rounded-3xl p-8 sm:p-10">
+          <div className="glass-strong rounded-3xl p-5 sm:p-8 lg:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Languages</p>
             <h2 className="heading mt-3 text-3xl font-semibold">Speaking + Writing</h2>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -273,7 +317,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="glass rounded-3xl p-8 sm:p-10">
+        <section className="glass rounded-3xl p-5 sm:p-8 lg:p-10">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Honors</p>
@@ -282,8 +326,11 @@ export default function Home() {
           </div>
           <div className="mt-6 space-y-3 text-sm text-muted">
             {cv.honors.map((honor) => (
-              <div key={honor} className="flex items-center gap-3 rounded-2xl border border-[color:var(--surface-border)] p-5">
-                {honor === 'Excellent Chinese Composition Example (1 of 10 out of 142,129 examinees on GSAT)' && (
+              <div
+                key={honor}
+                className="flex items-center gap-3 rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5"
+              >
+                {honor === "Excellent Chinese Composition Example (1 of 10 out of 142,129 examinees on GSAT)" && (
                   <Image
                     src="/icon-writing.svg"
                     alt=""
@@ -292,8 +339,14 @@ export default function Home() {
                     className="action-icon shrink-0 object-contain"
                   />
                 )}
-                {honor === 'Atlanta Hawks Employee of the Year (Season 2017 - 2018)' && (
-                  <Image src="/atlanta-hawks.png" alt="" width={22} height={22} className="shrink-0 rounded-full object-cover" />
+                {honor === "Atlanta Hawks Employee of the Year (Season 2017 - 2018)" && (
+                  <Image
+                    src="/atlanta-hawks.png"
+                    alt=""
+                    width={22}
+                    height={22}
+                    className="shrink-0 rounded-full object-cover"
+                  />
                 )}
                 <span>{honor}</span>
               </div>
@@ -302,5 +355,5 @@ export default function Home() {
         </section>
       </div>
     </main>
-  )
+  );
 }
