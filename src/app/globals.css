@@ -39,6 +39,16 @@ body {
   background: none;
 }
 
+html,
+body {
+  background-color: #95c1d5;
+}
+
+.dark,
+.dark body {
+  background-color: #0f1833;
+}
+
 body::before {
   content: "";
   position: fixed;
