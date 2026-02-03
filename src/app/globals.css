@@ -39,13 +39,11 @@ body {
   background: none;
 }
 
-html,
-body {
+html {
   background-color: #95c1d5;
 }
 
-.dark,
-.dark body {
+html.dark {
   background-color: #0f1833;
 }
 
