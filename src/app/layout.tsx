@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: 'Wei Hsuan Lee | Front-End Developer',
   description:
     'Front-end developer with 4+ years of experience in React, TypeScript, and modern web frameworks.',
+}
+
+export const viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#95C1D5' },
     { media: '(prefers-color-scheme: dark)', color: '#0F1833' },

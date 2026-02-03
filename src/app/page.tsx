@@ -1,4 +1,10 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 import ScooterRide from "@/components/ScooterRide";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -45,14 +51,58 @@ const ActionLink = ({
 );
 
 export default function Home() {
+  const rootRef = useRef<HTMLElement | null>(null);
+
+  useGSAP(
+    () => {
+      if (!rootRef.current) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const select = gsap.utils.selector(rootRef);
+      const sections = select("[data-animate-section]") as HTMLElement[];
+
+      sections.forEach((section) => {
+        const children = Array.from(section.children) as HTMLElement[];
+
+        gsap.from(section, {
+          opacity: 0,
+          y: 28,
+          duration: 0.65,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            once: true,
+          },
+        });
+
+        if (children.length > 0) {
+          gsap.from(children, {
+            opacity: 0,
+            y: 18,
+            duration: 0.55,
+            ease: "power2.out",
+            stagger: 0.08,
+            scrollTrigger: {
+              trigger: section,
+              start: "top 78%",
+              once: true,
+            },
+          });
+        }
+      });
+    },
+    { scope: rootRef }
+  );
+
   return (
-    <main className="px-3 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-10 lg:px-20 lg:pb-20">
+    <main ref={rootRef} className="px-3 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-10 lg:px-20 lg:pb-20">
       <ScooterRide className="scooter-ride--desktop" />
       <svg id="scooter-path-svg" className="scooter-path" aria-hidden>
         <path id="scooter-path" fill="none" stroke="transparent" strokeWidth="2" visibility="hidden" />
       </svg>
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
-        <header className="flex flex-wrap items-center justify-between gap-6">
+        <header className="flex flex-wrap items-center justify-between gap-6" data-animate-section>
           <div className="flex flex-col gap-2">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">{cv.hero.role}</p>
             <h1 className="heading text-3xl font-semibold sm:text-4xl">{cv.hero.name}</h1>
@@ -61,7 +111,7 @@ export default function Home() {
           <ThemeToggle />
         </header>
 
-        <section id="focus" className="focus-section scooter-section grid gap-6 lg:grid-cols-2">
+        <section id="focus" className="focus-section scooter-section grid gap-6 lg:grid-cols-2" data-animate-section>
           <ScooterRide className="scooter-ride--mobile" animate={false} />
           <div className="glass-strong rounded-3xl p-5 sm:p-8 lg:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Profile</p>
@@ -118,7 +168,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="skills" className="scooter-section glass rounded-3xl p-5 sm:p-8 lg:p-10">
+        <section id="skills" className="scooter-section glass rounded-3xl p-5 sm:p-8 lg:p-10" data-animate-section>
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Skills</p>
@@ -145,7 +195,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="scooter-section glass rounded-3xl p-5 sm:p-8 lg:p-10">
+        <section id="experience" className="scooter-section glass rounded-3xl p-5 sm:p-8 lg:p-10" data-animate-section>
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Experience</p>
@@ -187,7 +237,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projects" className="scooter-section grid gap-6 lg:grid-cols-2">
+        <section id="projects" className="scooter-section grid gap-6 lg:grid-cols-2" data-animate-section>
           {cv.projects.map((project, index) => (
             <div
               key={project.title}
@@ -281,7 +331,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
+        <section className="grid gap-6 lg:grid-cols-2" data-animate-section>
           <div className="glass rounded-3xl p-5 sm:p-8 lg:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Education</p>
             <h2 className="heading mt-3 text-3xl font-semibold">Academic Background</h2>
@@ -317,7 +367,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="glass rounded-3xl p-5 sm:p-8 lg:p-10">
+        <section className="glass rounded-3xl p-5 sm:p-8 lg:p-10" data-animate-section>
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Honors</p>
