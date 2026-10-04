@@ -42,6 +42,7 @@ const ActionLink = ({
       variant === "accent" ? "bg-[color:var(--accent)] text-slate-900" : "glass"
     }`}
     href={href}
+    download={href.endsWith(".pdf") ? "WeiHsuanLee_CV.pdf" : undefined}
     target={href.startsWith("http") ? "_blank" : undefined}
     rel={href.startsWith("http") ? "noreferrer" : undefined}
   >
@@ -120,9 +121,9 @@ export default function Home() {
             <div className="mt-6 flex gap-4 flex-wrap">
               <div className="flex-1 rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
-                  {cv.hero.workAuthorization.label}
+                  {cv.hero.availability.label}
                 </p>
-                <p className="mt-2 text-sm text-muted">{cv.hero.workAuthorization.details}</p>
+                <p className="mt-2 text-sm text-muted">{cv.hero.availability.details}</p>
               </div>
               <div className="flex-1 rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">{cv.hero.contact.label}</p>
@@ -185,7 +186,7 @@ export default function Home() {
                       key={item.name}
                       className="flex items-center gap-2 rounded-full border border-[color:var(--surface-border)] px-3 py-2 text-xs font-semibold text-[color:var(--text-primary)]"
                     >
-                      <SkillIcon src={item.icon} alt={`${item.name} icon`} />
+                      {item.icon && <SkillIcon src={item.icon} alt={`${item.name} icon`} />}
                       <span>{item.name}</span>
                     </div>
                   ))}
@@ -201,7 +202,7 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Experience</p>
               <h2 className="heading mt-2 text-3xl font-semibold">Recent Roles</h2>
             </div>
-            <p className="text-sm text-muted">Shipped production UI across fintech, events, and AI platforms.</p>
+            <p className="text-sm text-muted">Built web and mobile applications across professional and personal projects.</p>
           </div>
 
           <div className="mt-8 space-y-6">
@@ -212,7 +213,7 @@ export default function Home() {
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="flex items-center gap-4">
-                    <IconBadge src={role.companyIcon.src} alt={role.companyIcon.alt} />
+                    {role.companyIcon && <IconBadge src={role.companyIcon.src} alt={role.companyIcon.alt} />}
                     <div>
                       <h3 className="heading text-xl font-semibold">{role.title}</h3>
                       <p className="text-sm text-muted">
@@ -222,6 +223,7 @@ export default function Home() {
                   </div>
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">{role.date}</p>
                 </div>
+                {role.status && <p className="mt-4 text-sm font-semibold">{role.status}</p>}
                 {role.points.length > 0 && (
                   <ul className="mt-4 space-y-2 text-sm text-muted">
                     {role.points.map((point) => (
@@ -245,7 +247,7 @@ export default function Home() {
               data-project-index={index}
               className="glass rounded-3xl p-5 sm:p-8 lg:p-10"
             >
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted">Project</p>
                   <h3 className="heading mt-2 text-2xl font-semibold">{project.title}</h3>
@@ -275,7 +277,7 @@ export default function Home() {
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="Open live demo"
+                      aria-label={project.demoLabel ? `Open ${project.title} website` : "Open live demo"}
                     >
                       <Image
                         src="/icon-link.svg"
@@ -284,7 +286,7 @@ export default function Home() {
                         height={14}
                         className="action-icon object-contain"
                       />
-                      Demo
+                      {project.demoLabel || "Demo"}
                     </a>
                   )}
                   {project.video && (
@@ -314,7 +316,7 @@ export default function Home() {
                     alt={`${project.title} screenshot`}
                     width={640}
                     height={360}
-                    className="h-56 w-full object-cover object-top sm:h-64"
+                    className={`h-56 w-full sm:h-64 ${project.imageFit === "contain" ? "object-contain" : "object-cover object-top"}`}
                   />
                 </div>
               )}

@@ -1,13 +1,13 @@
 {
   "hero": {
-    "role": "Front-End Developer",
+    "role": "Front-End & Mobile Developer",
     "name": "Wei Hsuan Lee",
-    "locationLine": "Luxembourg - From Taipei",
-    "headline": "Front-end developer with 4+ years of experience building scalable web apps.",
-    "summary": "Specialized in React, TypeScript, and modern frameworks. Based in Luxembourg.",
-    "workAuthorization": {
-      "label": "Work Authorization",
-      "details": "Luxembourg Working Holiday Visa (Jun 2025 - Jun 2026). Full-time work without sponsorship, with extension possible via employer support."
+    "locationLine": "From Taipei, Taiwan · Open to Taiwan & Luxembourg",
+    "headline": "Front-end and mobile developer with 5+ years of experience building web and mobile apps.",
+    "summary": "Specialized in React, React Native, Next.js, and TypeScript. I turn product ideas into usable applications and explore AI-assisted workflows.",
+    "availability": {
+      "label": "Open to Opportunities",
+      "details": "Actively looking for roles in Taiwan and Luxembourg. Open to onsite, hybrid, and remote work."
     },
     "contact": {
       "label": "Contact",
@@ -36,8 +36,8 @@
   },
   "focus": {
     "title": "Focus",
-    "headline": "Frontend Development",
-    "summary": "I craft reliable interfaces that scale across teams while keeping the experience crisp and fast.",
+    "headline": "Web & Mobile Development",
+    "summary": "I build reusable interfaces and cross-platform applications, with personal projects inspired by my background in sports and entertainment.",
     "hometownLabel": "Hometown",
     "hometownSummary": "The background imagery is Taipei - the city where I was born and raised.",
     "image": {
@@ -50,6 +50,8 @@
       "title": "Core Stack",
       "items": [
         { "name": "React", "icon": "/skills-react.svg" },
+        { "name": "React Native", "icon": "/skills-react.svg" },
+        { "name": "Expo" },
         { "name": "TypeScript", "icon": "/skills-typescript.svg" },
         { "name": "JavaScript", "icon": "/skills-javascript.svg" },
         { "name": "Next.js", "icon": "/skills-nextjs.svg" }
@@ -67,7 +69,7 @@
     {
       "title": "Backend & Data",
       "items": [
-        { "name": "Python", "icon": "/skills-python.svg" },
+        { "name": "GraphQL" },
         { "name": "Node.js", "icon": "/skills-node.svg" },
         { "name": "Express", "icon": "/skills-express.svg" },
         { "name": "MySQL", "icon": "/skills-mysql.svg" }
@@ -92,14 +94,29 @@
   ],
   "experience": [
     {
-      "title": "IT Help Desk (CDD)",
-      "company": "Bank of China",
+      "title": "Front-End & Mobile Developer",
+      "company": "Cyberr",
+      "location": "Luxembourg",
+      "date": "Mar 2026 - Present",
+      "status": "Work paused since 27 June 2026 due to work permit restrictions.",
+      "points": [
+        "Developed Cyberr's iOS and Android application from the ground up using React Native, Expo, TypeScript, and GraphQL.",
+        "Built authentication (Apple sign-in and 2FA), real-time messaging, communities, certifications, and identity verification.",
+        "Migrated frontend integrations from Supabase to GraphQL across 8+ product domains using generated types and adapter abstractions.",
+        "Collaborated with backend, product, and design teams on application architecture, maintainability, and development workflows."
+      ]
+    },
+    {
+      "title": "IT Help Desk Technician (Fixed-term Contract)",
+      "company": "Luxportal Consulting — assigned to Bank of China Luxembourg",
       "companyIcon": { "src": "/bank-of-china.png", "alt": "Bank of China logo" },
       "location": "Luxembourg",
       "date": "Jul 2025 - Jan 2026",
       "points": [
         "Supported hardware and software setup, including Windows upgrade projects (Win7 -> Win11).",
-        "Troubleshot system and user technical issues to keep daily IT operations stable."
+        "Troubleshot workstation, printer, and application issues to support daily banking operations.",
+        "Assisted users with IBM Notes and Microsoft Edge IE mode for legacy applications.",
+        "Prepared user guidance and bilingual IT documentation to support system changes."
       ]
     },
     {
@@ -154,6 +171,21 @@
     }
   ],
   "projects": [
+    {
+      "title": "tete — Tennis Journal App",
+      "demo": "https://tete-tennis.com/",
+      "demoLabel": "Website",
+      "image": "/tete.png",
+      "imageFit": "contain",
+      "summary": "A personal tennis journal that helps club players record matches and practices, remember opponents, and track their progress. Available on iOS and Android, with download links on the website.",
+      "points": [
+        "Independently developed and published a cross-platform mobile app using React Native and Expo, from concept and UX design to store publication and its public website.",
+        "Built match and practice logging, opponent profiles, head-to-head records, and personal journal entries.",
+        "Created dashboards with win-rate trends, activity heatmaps, and statistics by surface and month.",
+        "Added AI-assisted stroke analysis with video feedback and saved frame references.",
+        "Supported seven languages, Apple sign-in, and private records protected by row-level security."
+      ]
+    },
     {
       "title": "AI Sponsor Finder",
       "link": "https://github.com/weihsuanlee/v0-ai-sponsor-finder",
@@ -223,6 +255,6 @@
   "languages": [
     "Mandarin (Native)",
     "English (Fluent, TOEFL 103/120)",
-    "French (Beginner A1-3)"
+    "French (Beginner A1)"
   ]
 }

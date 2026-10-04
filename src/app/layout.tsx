@@ -12,9 +12,9 @@ const syne = Syne({
 })
 
 export const metadata: Metadata = {
-  title: 'Wei Hsuan Lee | Front-End Developer',
+  title: 'Wei Hsuan Lee | Front-End & Mobile Developer',
   description:
-    'Front-end developer with 4+ years of experience in React, TypeScript, and modern web frameworks.',
+    'Front-end and mobile developer with 5+ years of experience in React, React Native, Next.js, and TypeScript. Open to opportunities in Taiwan and Luxembourg.',
 }
 
 export const viewport = {
