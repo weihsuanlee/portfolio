@@ -96,6 +96,7 @@
     {
       "title": "Front-End & Mobile Developer",
       "company": "Cyberr",
+      "companyIcon": { "src": "/cyberr.png", "alt": "Cyberr logo" },
       "location": "Luxembourg",
       "date": "Mar 2026 - Present",
       "status": "Work paused since 27 June 2026 due to work permit restrictions.",
