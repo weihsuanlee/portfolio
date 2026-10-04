@@ -128,7 +128,12 @@ export default function Home() {
               <div className="flex-1 rounded-2xl border border-[color:var(--surface-border)] p-3 sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">{cv.hero.contact.label}</p>
                 <p className="mt-2 text-sm font-semibold">{cv.hero.contact.phone}</p>
-                <p className="text-sm font-semibold">{cv.hero.contact.email}</p>
+                <a
+                  href={`mailto:${cv.hero.contact.email}`}
+                  className="block break-all text-sm font-semibold underline underline-offset-4 hover:opacity-70"
+                >
+                  {cv.hero.contact.email}
+                </a>
               </div>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -316,7 +321,7 @@ export default function Home() {
                     alt={`${project.title} screenshot`}
                     width={640}
                     height={360}
-                    className={`h-56 w-full sm:h-64 ${project.imageFit === "contain" ? "object-contain" : "object-cover object-top"}`}
+                    className="h-56 w-full object-cover object-top sm:h-64"
                   />
                 </div>
               )}

@@ -177,7 +177,6 @@
       "demo": "https://tete-tennis.com/",
       "demoLabel": "Website",
       "image": "/tete.png",
-      "imageFit": "contain",
       "summary": "A personal tennis journal that helps club players record matches and practices, remember opponents, and track their progress. Available on iOS and Android, with download links on the website.",
       "points": [
         "Independently developed and published a cross-platform mobile app using React Native and Expo, from concept and UX design to store publication and its public website.",
